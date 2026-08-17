@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MailGuard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="nav container">
+    <a class="brand" href="#home"><span class="brand-dot"></span> MAILGUARD</a>
+    <a class="nav-link" href="#analyze">Analyze email <span>→</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="orb orb-one"></div><div class="orb orb-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">SMART EMAIL CLASSIFICATION</p>
+          <h1>Protect your inbox from unwanted email.</h1>
+          <p class="hero-text">Analyze an email subject and body to detect spam patterns in seconds.</p>
+          <a class="button button-light" href="#analyze">Start analyzing <span>→</span></a>
+          <div class="trust"><span class="pulse"></span> TF-IDF + Logistic Regression</div>
+        </div>
+        <div class="hero-card" aria-label="Vista previa del analizador">
+          <div class="card-top"><span class="mini-dot"></span><span class="mini-dot"></span><span class="mini-dot"></span></div>
+          <div class="mail-icon">✉</div>
+          <div class="preview-line wide"></div><div class="preview-line"></div><div class="preview-line short"></div>
+          <div class="preview-badge">AI CHECK</div>
+        </div>
+      </div>
+      <div class="wave"></div>
+    </section>
+
+    <section class="features container">
+      <p class="eyebrow purple">WHY MAILGUARD</p>
+      <h2>A simple way to check your emails.</h2>
+      <div class="feature-grid">
+        <article><div class="feature-icon">✦</div><h3>Fast</h3><p>Get a prediction in seconds.</p></article>
+        <article><div class="feature-icon">◉</div><h3>Clear</h3><p>See the result and confidence score.</p></article>
+        <article><div class="feature-icon">⌁</div><h3>Private</h3><p>Analyze emails only when you choose.</p></article>
+        <article><div class="feature-icon">✓</div><h3>Simple</h3><p>Just provide a subject and body.</p></article>
+      </div>
+    </section>
+
+    <section class="analyzer-wrap" id="analyze">
+      <div class="container analyzer-grid">
+        <div class="analyzer-copy"><p class="eyebrow purple">EMAIL ANALYZER</p><h2>Is this email safe?</h2><p>Enter the email details and let the model review its patterns.</p><p class="language-note">This model is trained to analyze emails written in English.</p></div>
+        <form id="predict-form" class="analyzer-card">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" placeholder="e.g. Confirm your account today">
+          <label for="body">Email body</label>
+          <textarea id="body" name="body" rows="7" placeholder="Paste the email content here..."></textarea>
+          <button class="button button-primary" type="submit">Analyze email <span>→</span></button>
+          <div id="result" class="result" hidden></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="bottom-cta"><div class="container"><p class="eyebrow">A SMART FIRST FILTER</p><h2>More clarity before you open.</h2></div></section>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
