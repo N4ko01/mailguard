@@ -1,0 +1,27 @@
+# Datos de entrenamiento y archivos grandes
+TRAINING/
+*.csv
+*.xlsx
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Configuración local y secretos
+.env
+.env.*
+!.env.example
+
+# Archivos del sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Logs
+*.log
